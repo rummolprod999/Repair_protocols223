@@ -44,7 +44,7 @@ def main():
         change_type(con, res_cur2)
     else:
         for i in range(0, page + 1):
-            cur2.execute("""SELECT id FROM protocols223 LIMIT 10000 OFFSET %s""", (i * 10000,))
+            cur2.execute("""SELECT id FROM protocols223 WHERE type_ftp = '' LIMIT 10000 OFFSET %s""", (i * 10000,))
             res_cur2 = cur2.fetchall()
             change_type(con, res_cur2)
 
